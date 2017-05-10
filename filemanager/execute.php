@@ -230,7 +230,7 @@ if (isset($_GET['action']))
 			$content = $_POST['new_content'];
 
 			if($ftp){
-				$tmp = time().$name;
+				$tmp = "/tmp/".time().$name;
 				file_put_contents($tmp, $content);
 				$ftp->put("/".$path.$name, $tmp, FTP_BINARY);
 				unlink($tmp);
@@ -480,7 +480,7 @@ if (isset($_GET['action']))
 			// $content = stripslashes($content);
 
 			if($ftp){
-				$tmp = time();
+				$tmp = "/tmp/".time();
 				file_put_contents($tmp, $content);
 				try{
 					$ftp->put("/".$path, $tmp, FTP_BINARY);
