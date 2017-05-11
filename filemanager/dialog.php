@@ -82,10 +82,10 @@ if ($show_total_size) {
 *SUB-DIR CODE
 ***/
 
-if(isset($_GET['sf'])) 
+if(isset($_GET['rf'])) 
 {
-	$sf = strip_tags($_GET['sf']);
-	$_SESSION['RF']["subfolder"] = $sf;
+	$rf = strip_tags($_GET['rf']);
+	$_SESSION['RF']["subfolder"] = $rf;
 }
 if (!isset($_SESSION['RF']["subfolder"]))
 {

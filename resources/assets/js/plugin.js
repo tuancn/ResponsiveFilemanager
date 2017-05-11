@@ -70,6 +70,10 @@ tinymce.PluginManager.add('filemanager', function(editor) {
 		if (typeof editor.settings.filemanager_subfolder !== "undefined" && editor.settings.filemanager_subfolder) {
 			fldr="&fldr="+editor.settings.filemanager_subfolder;
 		}
+		var rf="";
+		if (typeof editor.settings.filemanager_rf !== "undefined" && editor.settings.filemanager_rf) {
+            rf="&rf="+editor.settings.filemanager_rf;
+        }
 		var crossdomain="";
 		if (typeof editor.settings.filemanager_crossdomain !== "undefined" && editor.settings.filemanager_crossdomain) {
 			crossdomain="&crossdomain=1";
@@ -84,7 +88,7 @@ tinymce.PluginManager.add('filemanager', function(editor) {
 
 		tinymce.activeEditor.windowManager.open({
 			title: title,
-			file: editor.settings.external_filemanager_path+'dialog.php?type='+urltype+'&descending='+descending+sort_by+fldr+crossdomain+'&lang='+editor.settings.language+'&akey='+akey,
+			file: editor.settings.external_filemanager_path+'dialog.php?type='+urltype+'&descending='+descending+sort_by+fldr+rf+crossdomain+'&lang='+editor.settings.language+'&akey='+akey,
 			width: width,  
 			height: height,
 			resizable: true,
